@@ -1,0 +1,7 @@
+export default (expenses) => {
+    let total = 0;
+    if (expenses.length === 0) {
+        return total;
+    }
+    return expenses.map((expense) => expense.amount).reduce((sum, value) => sum + value, 0);
+}
