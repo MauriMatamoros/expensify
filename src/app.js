@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
+import { startSetExpenses } from './actions/expenses';
 
 import './firebase/firebase';
 
@@ -19,4 +20,6 @@ const jsx = (
     </Provider>
 );
 
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<p>loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetExpenses()).then(() => ReactDOM.render(jsx, document.getElementById('app')));
